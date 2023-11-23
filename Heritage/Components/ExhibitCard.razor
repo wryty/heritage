@@ -1,0 +1,14 @@
+﻿@using HeritageApi.Data.Entities
+<!-- Client/Components/ExhibitCard.razor -->
+<!-- Client/Components/ExhibitCard.razor -->
+
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px; background-color: #f9f9f9; width: 400px; height: 400px;">
+    <h4>@Source.Name</h4>
+    <p>@Source.Description</p>
+    <a href="/exhibits/@Source.Id">Подробнее</a>
+</div>
+
+@code {
+    [Parameter]
+    public Exhibit Source { get; set; }
+}

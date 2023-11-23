@@ -1,28 +1,40 @@
 {
   "Version": 1,
-  "Hash": "oSSKkkTrzTNS4rn5Z4IL0EfPXp5EFhOJdVaPiXl3bSc=",
-  "Source": "heritage",
-  "BasePath": "_content/heritage",
+  "Hash": "QBJiKe35B3nClG+j9YxAPNThrioW6wFnESMidd76kYo=",
+  "Source": "Heritage",
+  "BasePath": "_content/Heritage",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\heritageapi\\HeritageApi.csproj",
+      "Version": 2,
+      "Source": "HeritageApi",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
-      "Name": "heritage\\wwwroot",
-      "Source": "heritage",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\",
-      "BasePath": "_content/heritage",
+      "Name": "Heritage\\wwwroot",
+      "Source": "Heritage",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\",
+      "BasePath": "_content/Heritage",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\heritage.styles.css",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Heritage.styles.css",
+      "SourceId": "Heritage",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/heritage",
-      "RelativePath": "heritage.styles.css",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/Heritage",
+      "RelativePath": "Heritage.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -33,15 +45,15 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\heritage.styles.css"
+      "OriginalItemSpec": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Heritage.styles.css"
     },
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\heritage.bundle.scp.css",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Heritage.bundle.scp.css",
+      "SourceId": "Heritage",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/heritage",
-      "RelativePath": "heritage.bundle.scp.css",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/Heritage",
+      "RelativePath": "Heritage.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -52,14 +64,14 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\heritage.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Heritage.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\app.css",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\app.css",
+      "SourceId": "Heritage",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\",
-      "BasePath": "_content/heritage",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\",
+      "BasePath": "_content/Heritage",
       "RelativePath": "app.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -74,11 +86,11 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\bootstrap\\bootstrap.min.css",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "SourceId": "Heritage",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\",
-      "BasePath": "_content/heritage",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\",
+      "BasePath": "_content/Heritage",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -93,11 +105,11 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\bootstrap\\bootstrap.min.css.map",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "SourceId": "Heritage",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\",
-      "BasePath": "_content/heritage",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\",
+      "BasePath": "_content/Heritage",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -112,11 +124,11 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\favicon.png",
-      "SourceId": "heritage",
+      "Identity": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\favicon.png",
+      "SourceId": "Heritage",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\",
-      "BasePath": "_content/heritage",
+      "ContentRoot": "C:\\Users\\wryty\\Desktop\\heritage\\Heritage\\wwwroot\\",
+      "BasePath": "_content/Heritage",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
       "AssetMode": "All",
