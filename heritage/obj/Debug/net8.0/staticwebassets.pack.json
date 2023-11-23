@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\heritage.bundle.scp.css",
+      "PackagePath": "staticwebassets\\heritage.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\wryty\\Desktop\\heritage\\hack\\heritage\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.heritage.props",
+      "PackagePath": "build\\heritage.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.heritage.props",
+      "PackagePath": "buildMultiTargeting\\heritage.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.heritage.props",
+      "PackagePath": "buildTransitive\\heritage.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.heritage.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
