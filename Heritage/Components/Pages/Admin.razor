@@ -1,0 +1,148 @@
+﻿@page "/admin"
+@using Microsoft.AspNetCore.Http
+@inject NavigationManager NavigationManager
+@inject ExhibitService ExhibitService
+@inject SessionService SessionService
+@using Microsoft.AspNetCore.Components.Forms
+@rendermode InteractiveServer
+
+
+@if (SessionService.CurrentUser.Roles == null || !SessionService.CurrentUser.Roles.Contains("Admin"))
+{
+    <p>Недостаточно прав</p>
+}
+else
+{
+    <div class="spinner-container" style="display: @(isLoading ? "flex" : "none")">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <h3>Admin Dashboard</h3>
+
+    <div>
+        <h4>Create Exhibit</h4>
+        <form @onsubmit="CreateExhibit">
+            <label for="name">Name:</label>
+            <input type="text" id="name" @bind="newExhibit.Name" required />
+            <br />
+
+            <label for="description">Description:</label>
+            <textarea id="description" @bind="newExhibit.Description" required></textarea>
+            <br />
+
+            <label for="image">Image:</label>
+            <InputFile OnChange="HandleFileChange" />
+            <br />
+
+            <button type="submit">Create Exhibit</button>
+        </form>
+    </div>
+    <hr />
+
+    <div>
+        <h4>Exhibits</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var exhibit in exhibits)
+                {
+                    <tr>
+                        <td>@exhibit.Id</td>
+                        <td>@exhibit.Name</td>
+                        <td>@exhibit.Description</td>
+                        <td>
+                            <button @onclick="() => EditExhibit(exhibit.Id)">Edit</button>
+                            <button @onclick="() => DeleteExhibit(exhibit.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+@code {
+    private IEnumerable<Exhibit> exhibits = new List<Exhibit>();
+    private Exhibit newExhibit = new Exhibit();
+    private IFormFile imageFile;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadExhibits();
+    }
+
+    private async Task LoadExhibits()
+    {
+        isLoading = true;
+        exhibits = await ExhibitService.GetExhibitsAsync();
+        isLoading = false;
+    }
+
+    private async Task CreateExhibit()
+    {
+
+        var createdExhibitId = await ExhibitService.CreateExhibitAsync(newExhibit);
+        if (createdExhibitId > 0)
+        {
+            Console.WriteLine($"Экспонат успешно создан с ID: {createdExhibitId}");
+
+            if (imageFile != null)
+            {
+                var uploadSuccess = await ExhibitService.UploadImageAsync(createdExhibitId, imageFile);
+
+                if (!uploadSuccess)
+                {
+                    Console.WriteLine("Ошибка загрузки изображения");
+                    return;
+                }
+            }
+
+            newExhibit = new Exhibit();
+            imageFile = null;
+            await LoadExhibits();
+            StateHasChanged();
+        }
+        else
+        {
+            Console.WriteLine("Ошибка создания экспоната");
+        }
+    }
+
+    private void EditExhibit(long id)
+    {
+        NavigationManager.NavigateTo($"/admin/exhibits/{id}");
+    }
+
+    private async Task DeleteExhibit(long id)
+    {
+        var response = await ExhibitService.DeleteExhibitAsync(id);
+
+        if (response)
+        {
+            await LoadExhibits();
+        }
+        else
+        {
+            Console.WriteLine("Ошибка удаления экспоната");
+        }
+    }
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            var buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer);
+            imageFile = new FormFile(new MemoryStream(buffer), 0, buffer.Length, file.Name, file.Name);
+        }
+    }
+}

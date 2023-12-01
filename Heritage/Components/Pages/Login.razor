@@ -1,0 +1,61 @@
+﻿@page "/login"
+@inject AuthenticationServices AuthenticationServices
+@inject SessionService SessionService
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Components.Web
+@using System.Text
+@using Newtonsoft.Json
+@using System.Net.Http.Json
+@rendermode InteractiveServer
+
+
+<div class="spinner-container" style="display: @(isLoading ? "flex" : "none")">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+<div class="col-md-6 offset-md-3">
+    <h1>Авторизация</h1>
+
+    <SurveyPrompt Title="Нет аккаунта? " />
+    <div>
+        <label for="username">Логин</label>
+        <input id="username" type="text" class="form-control" placeholder="Имя или ник пользователя" @bind="username" />
+    </div>
+    <div>
+        <label for="password">Пароль</label>
+        <input id="password" type="password" class="form-control" placeholder="Введите пароль" @bind="password" />
+    </div>
+    <p>
+        <button @onclick="AuthAsync">Войти</button>
+        <p>
+            <code>@message</code>
+        </p>
+    </p>
+</div>
+
+@code {
+    private string username;
+    private string password;
+    private string message;
+    bool isLoading = false;
+    async void AuthAsync()
+    {
+        isLoading = true;
+        var token = await AuthenticationServices.AuthenticateAsync(username, password);
+        isLoading = false;
+        if (!string.IsNullOrEmpty(token))
+        {
+            SessionService.SetTokenAsync(token);
+            message = $"hello: {SessionService.CurrentUser.UserName}, {string.Join(" ", SessionService.CurrentUser.Roles)}";
+
+        }
+        else
+        {
+            message = "Invalid login or password";
+        }
+        StateHasChanged();
+    }
+}

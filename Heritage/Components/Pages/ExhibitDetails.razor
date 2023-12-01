@@ -1,12 +1,12 @@
 ﻿<!-- Client/Pages/ExhibitDetails.razor -->
 @page "/exhibits/{Id:long}"
 
-@inject IHttpClientFactory ClientFactory
+@inject ExhibitService ExhibitService
 @using HeritageApi.Data.Entities;
 @using Newtonsoft.Json;
 <h3>Подробности об экспонате</h3>
 
-@if (getCulturalHeritageError || exhibit is null)
+@if (exhibit is null)
 {
     <p>Unable to get cultural heritage data. Please try again later.</p>
 }
@@ -19,32 +19,13 @@ else
     [Parameter]
     public long Id { get; set; }
     private Exhibit exhibit { get; set; }
-    private bool getCulturalHeritageError;
+    //private bool getCulturalHeritageError;
     private bool shouldRender;
     protected override bool ShouldRender() => shouldRender;
 
     protected override async Task OnInitializedAsync()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get,
-            $"https://localhost:7210/api/Exhibit/{Id}");
-        request.Headers.Add("Accept", "application/json");
-        request.Headers.Add("User-Agent", "HttpClientFactory-Sample");
-
-        var client = ClientFactory.CreateClient();
-
-        var response = await client.SendAsync(request);
-
-        if (response.IsSuccessStatusCode)
-        {
-            var responseStream = await response.Content.ReadAsStringAsync();
-            exhibit = JsonConvert.DeserializeObject
-                <Exhibit>(responseStream);
-        }
-        else
-        {
-            getCulturalHeritageError = true;
-        }
-
+        var exhibit = await ExhibitService.GetExhibitByIdAsync(Id);
         shouldRender = true;
     }
 }

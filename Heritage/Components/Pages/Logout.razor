@@ -1,0 +1,23 @@
+﻿@page "/logout"
+@inject SessionService SessionService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+
+<h3>Logout Confirmation</h3>
+
+<p>Are you sure you want to log out?</p>
+
+<button @onclick="Clear">Logout</button>
+
+
+@code {
+
+    private async Task Clear()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.clear");
+        await JSRuntime.InvokeVoidAsync("sessionStorage.clear");
+
+        NavigationManager.NavigateTo("/",true);
+    }
+}

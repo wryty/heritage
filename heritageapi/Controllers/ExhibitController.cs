@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography.Xml;
 using HeritageApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeritageApi.Controllers;
 
@@ -30,7 +31,7 @@ public class ExhibitController : ControllerBase
     }
 
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleConsts.Administrator)]
     [HttpPost("/api/Exhibit")]
     public async Task<ActionResult> CreateExhibit([FromBody] ExhibitRequest request)
     {
@@ -39,7 +40,7 @@ public class ExhibitController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        var user = await _userManager.FindByNameAsync(User.Identity.Name);
+        var user = await _userManager.GetUserAsync(User);
 
         if (user == null)
         {
@@ -55,14 +56,14 @@ public class ExhibitController : ControllerBase
         _context.Exhibits.Add(Exhibit);
         await _context.SaveChangesAsync();
 
-        return Ok("Exhibit created successfully");
+        return Ok(new { ExhibitId = Exhibit.Id, Message = "Exhibit created successfully" });
     }
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleConsts.Administrator)]
     [HttpPut("/api/Exhibit/{id}")]
     public async Task<ActionResult> UpdateExhibit(long id, [FromBody] ExhibitRequest request)
     {
-        var user = await _userManager.FindByNameAsync(User.Identity.Name);
+        var user = await _userManager.GetUserAsync(User);
 
         if (user == null)
         {
@@ -85,13 +86,13 @@ public class ExhibitController : ControllerBase
         return Ok("Exhibit updated successfully");
     }
 
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer", Roles = RoleConsts.Administrator)]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteExhibit(long id)
     {
         var Exhibit = await _context.Exhibits.FindAsync(id);
 
-        var user = await _userManager.FindByNameAsync(User.Identity.Name);
+        var user = await _userManager.GetUserAsync(User);
 
         if (Exhibit == null)
         {
@@ -111,17 +112,54 @@ public class ExhibitController : ControllerBase
         }
     }
 
+
     [HttpGet("{id}")]
     public IActionResult GetExhibitByIdAdmin(long id)
     {
-        return Ok(_context.Exhibits.Find(id));
+        var exhibit = _context.Exhibits.Find(id);
+        return Ok(new { exhibit.Id, exhibit.Name, exhibit.Description, exhibit.ImageFileName });
     }
-
 
     [HttpGet]
     public async Task<IActionResult> GetExhibits()
     {
-        return Ok( _context.Exhibits );
+        var exhibits = await _context.Exhibits.Select(e => new { e.Id, e.Name, e.Description, e.ImageFileName }).ToListAsync();
+        return Ok(exhibits);
     }
+
+
+    [HttpPost("/api/Exhibit/UploadImage/{id}")]
+    public async Task<ActionResult> UploadImage(long id, IFormFile file)
+    {
+        var exhibit = await _context.Exhibits.FindAsync(id);
+
+        if (exhibit == null)
+        {
+            return NotFound("Exhibit not found");
+        }
+
+        var uploadPath = Path.Combine("..", "heritage", "wwwroot", "uploads");
+
+        if (!Directory.Exists(uploadPath))
+        {
+            Directory.CreateDirectory(uploadPath);
+        }
+
+        var uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+        var filePath = Path.Combine(uploadPath, uniqueFileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        exhibit.ImageFileName = uniqueFileName;
+        _context.Exhibits.Update(exhibit);
+        await _context.SaveChangesAsync();
+
+        return Ok("Image uploaded successfully");
+    }
+
+
 
 }

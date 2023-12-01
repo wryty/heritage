@@ -1,7 +1,41 @@
 ﻿@page "/"
-
+@inject SessionService SessionService
+@rendermode InteractiveServer
+@inject ExhibitService ExhibitService
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
+<h2>@needed</h2>
+
+
 Welcome to your new app.
+
+
+@code {
+    string needed = "";
+    bool IsAdmin { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        SessionService.RolesChanged += OnRolesUpdated;
+        needed = SessionService.CurrentUser.UserName; // !!!
+    }
+
+    private async Task UpdateRoles()
+    {
+        var update = await SessionService.GetUserAsync();
+        needed = update.UserName;
+        StateHasChanged();
+    }
+
+    private void OnRolesUpdated()
+    {
+        _ = InvokeAsync(UpdateRoles);
+    }
+
+    void ToggleNavMenu()
+    {
+        
+    }
+}

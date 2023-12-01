@@ -1,4 +1,6 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@rendermode InteractiveServer
+@inject SessionService SessionService
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Heritage</a>
     </div>
@@ -15,17 +17,58 @@
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="exhibits" Match="NavLinkMatch.All">
+                <span class="bi bi-apple" aria-hidden="true"></span> Exhibits
             </NavLink>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="exhibits">
-                <span class="bi bi-art-grid-nav-menu" aria-hidden="true"></span> Exhibits
+        <div class="nav-item px-3" hidden="@(IsLogged)">
+            <NavLink class="nav-link" href="login" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Login
             </NavLink>
         </div>
+
+        <div class="nav-item px-3" hidden="@(!IsAdmin)">
+            <NavLink class="nav-link" href="admin" @onclick="ToggleNavMenu" Match="NavLinkMatch.All">
+                <span class="bi bi-tools-nav-menu" aria-hidden="true"></span> Admin
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3" hidden="@(!IsLogged)">
+            <NavLink class="nav-link" href="logout">
+                <span class="bi bi-box-arrow-right-nav-menu" aria-hidden="true"></span> Logout
+            </NavLink>
+        </div>
+
 
     </nav>
 </div>
 
+@code {
+    bool IsAdmin { get; set; } = false;
+    bool IsLogged { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        SessionService.RolesChanged += OnRolesUpdated;
+    }
+
+    private async Task UpdateRoles()
+    {
+        var user = await SessionService.GetUserAsync();
+        var roles = user.Roles;
+        IsAdmin = roles?.Contains("Admin") ?? false;
+        IsLogged = roles != null;
+        StateHasChanged();
+    }
+
+    private void OnRolesUpdated()
+    {
+        _ = InvokeAsync(UpdateRoles);
+    }
+
+    void ToggleNavMenu()
+    {
+        
+    }
+}

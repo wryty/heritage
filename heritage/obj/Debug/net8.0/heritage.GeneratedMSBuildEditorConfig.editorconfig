@@ -22,8 +22,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/wryty/Desktop/heritage/Heritage/Components/ExhibitCard.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFeGhpYml0Q2FyZC5yYXpvcg==
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Admin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Error.razor]
@@ -34,25 +34,33 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGhpYml0RGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/ExhibitsList.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGhpYml0c0xpc3QucmF6b3I=
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/ExhibitsEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGhpYml0c0VkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/wryty/Desktop/heritage/Heritage/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTdXJ2ZXlQcm9tcHQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/wryty/Desktop/heritage/Heritage/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/ExhibitCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFeGhpYml0Q2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-twouvhyhko
 
 [C:/Users/wryty/Desktop/heritage/Heritage/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
@@ -61,3 +69,11 @@ build_metadata.AdditionalFiles.CssScope = b-9swokx8dxd
 [C:/Users/wryty/Desktop/heritage/Heritage/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-xgo4u0tyfb
+
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/ExhibitsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFeGhpYml0c0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-vp7j71hlvf
+
+[C:/Users/wryty/Desktop/heritage/Heritage/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-15im18nki6

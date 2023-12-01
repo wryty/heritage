@@ -1,14 +1,22 @@
 ﻿@using HeritageApi.Data.Entities
-<!-- Client/Components/ExhibitCard.razor -->
-<!-- Client/Components/ExhibitCard.razor -->
-
-<div style="border: 1px solid #ccc; padding: 10px; margin: 10px; background-color: #f9f9f9; width: 400px; height: 400px;">
+@inject NavigationManager NavigationManager
+<div class="exhibit-card" @onclick="NavigateToExhibit" style="border: 1px solid #ccc; padding: 10px; margin: 10px; background-color: aquamarine; width: 400px; height: 400px;">
+    @if (Source.ImageFileName != "")
+    {
+        <img src="/uploads/@Source.ImageFileName
+        " alt="@Source.ImageFileName
+        " width="50" height="50"/>
+    }
     <h4>@Source.Name</h4>
     <p>@Source.Description</p>
-    <a href="/exhibits/@Source.Id">Подробнее</a>
 </div>
 
 @code {
     [Parameter]
-    public Exhibit Source { get; set; }
+    public Exhibit Source { get; set; } = null!;
+
+    private void NavigateToExhibit()
+    {
+        NavigationManager.NavigateTo($"/exhibits/{Source.Id}");
+    }
 }

@@ -1,4 +1,5 @@
 using Heritage.Components;
+using Heritage.Services;
 using System.Net.Http;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,12 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddHttpClient();
 
+builder.Services.AddOptions();
+//builder.Services.AddAuthorizationCore();
+//builder.Services.AddAuthenticationCore();
+builder.Services.AddScoped<AuthenticationServices>();
+builder.Services.AddScoped<SessionService>();
+builder.Services.AddScoped<ExhibitService>();
 
 var app = builder.Build();
 

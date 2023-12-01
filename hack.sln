@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeritageApi", "heritageapi\HeritageApi.csproj", "{A9D2C607-C1BE-4EF0-ADEE-C8110643C60E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeritageApi", "heritageapi\HeritageApi.csproj", "{A9D2C607-C1BE-4EF0-ADEE-C8110643C60E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heritage", "Heritage\Heritage.csproj", "{F1E456F4-DADA-40B9-9814-3BB61C7F4D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heritage", "Heritage\Heritage.csproj", "{F1E456F4-DADA-40B9-9814-3BB61C7F4D34}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{92C5E256-E109-4E85-BF07-FC5CB1D5D441}"
 EndProject

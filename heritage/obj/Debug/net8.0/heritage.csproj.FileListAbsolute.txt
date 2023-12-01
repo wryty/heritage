@@ -245,3 +245,8 @@ C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\runtimes\win\lib\net6.
 C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\HeritageApi.dll
 C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\HeritageApi.pdb
 C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\Heritage.csproj.CopyComplete
+C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\HeritageApi.staticwebassets.runtime.json
+C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\Pages\ExhibitsList.razor.rz.scp.css
+C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
+C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\ExhibitCard.razor.rz.scp.css
