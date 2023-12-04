@@ -1,15 +1,15 @@
 ﻿@using HeritageApi.Data.Entities
 @inject NavigationManager NavigationManager
-<div class="exhibit-card" @onclick="NavigateToExhibit" style="border: 1px solid #ccc; padding: 10px; margin: 10px; background-color: aquamarine; width: 400px; height: 400px;">
-    @if (Source.ImageFileName != "")
-    {
-        <img src="/uploads/@Source.ImageFileName
-        " alt="@Source.ImageFileName
-        " width="50" height="50"/>
-    }
-    <h4>@Source.Name</h4>
-    <p>@Source.Description</p>
-</div>
+
+    <div class="exhibit" @onclick="NavigateToExhibit" style="background-color: rgba(0 0 0, 0.5); width: 350px; height: 350px;">
+        @if (Source.PreviewImageFileName != null)
+        {
+        <img class="image" src="/uploads/@Source.PreviewImageFileName
+                    " alt="@Source.PreviewImageFileName" />
+        }
+        <h1 class="text">@Source.Name</h1>
+    </div>
+
 
 @code {
     [Parameter]

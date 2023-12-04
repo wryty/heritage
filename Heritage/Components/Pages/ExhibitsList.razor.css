@@ -7,3 +7,66 @@ a:hover {
     text-decoration: underline; 
     color: #FF0000; 
 }
+
+.exhibit {
+    display: flex;
+    position: relative;
+    background-color: rgba(0 0 0, 0.5);
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+    .exhibit .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2.2rem;
+        color: #ffffff;
+        font-family: Cruinn, 'Source Sans Pro';
+    }
+
+    .exhibit::before, exhibit::after {
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+        z-index: -1;
+    }
+
+.aligncenter {
+}
+
+.exhibit .image {
+    background-color: rgb(0 0 0);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: bottom;
+    background-size: cover;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    filter: brightness(40%);
+}
+
+
+.header {
+    margin-top: 20px;
+    margin-bottom: 2.4rem;
+    background: radial-gradient(0% 0% at 50% 50.59%, #000000 0%, #271504 0.01%, #190d01 97.4%);
+    height: 85px;
+}
+
+.text {
+    text-align: center;
+    line-height: 85px;
+    color: white;
+    font-family: Cruinn, 'Source Sans Pro';
+    margin-top: -20px;
+}

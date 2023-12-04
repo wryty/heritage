@@ -2,19 +2,39 @@
 @inject SessionService SessionService
 @rendermode InteractiveServer
 @inject ExhibitService ExhibitService
-<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
-
-<h2>@needed</h2>
-
-
-Welcome to your new app.
-
+<div class="image-container">
+    <!--<img class="image" src="fon.png" />-->
+    <img class="image" src="/uploads/fon.png" />
+    <div class="layer2"></div>
+    <h2 class="text-container">музей</h2>
+    <p>марийский радиомеханический</p>
+    <p2>техникум</p2>
+</div>
+<div id="top" class="content-container">
+    <section class="block1">
+        <p3>@textA1</p3>
+    </section>
+    <section class="block2">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <img class="img1" src="/uploads/rectangle-4.png" />
+        <img class="img2" src="/uploads/rectangle-5.png" />
+    </section>
+</div>
+<div id="bottom" class="content-container">
+    <section class="block3">
+        <p4>@textA2</p4>
+    </section>
+    <section class="block4">
+        <div class="rect3"></div>
+        <img class="img3" src="/uploads/rectangle-6.png" />
+    </section>
+</div>
 
 @code {
-    string needed = "";
     bool IsAdmin { get; set; } = false;
+    string needed = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -31,11 +51,20 @@ Welcome to your new app.
 
     private void OnRolesUpdated()
     {
-        _ = InvokeAsync(UpdateRoles);
+        _ = InvokeAsync(UpdateRoles);   
     }
 
     void ToggleNavMenu()
     {
-        
+
     }
+
+    string textA1 = "15 мая 1944 года в соответствии с приказом Народного Комиссара Вооружения Союза ССР № 282 и" +
+    " с распоряжением Совета Народных Комиссаров Союза СССР № 10618 в городе Йошкар-Ола был организован Оптико-Механический" +
+    " Техникум, наш нынешний Марийский Радиомеханичсекий Техникум. Именно с этого момента началась история которая будет отражена в экспонатах," +
+    " фотографиях и записях музея МРМТ. Все это вы сможете увидеть здесь.";
+
+    string textA2 = "В 2006 году он стал лауреатом конкурса в номинации “100 лучших ссузов России”, а в 2020 году вошел в топ-100" +
+    " лучших образовательных организаций среднего профессионального образования Российской Федерации движения “молодые профессионалы ”." +
+    " Сам музей истории МРМТ в 2021 году стал победителем республиканского конкурса “Лучший музей профессиональной образовательной организации”.";
 }

@@ -250,3 +250,4 @@ C:\Users\wryty\Desktop\heritage\Heritage\bin\Debug\net8.0\HeritageApi.staticweba
 C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\Pages\ExhibitsList.razor.rz.scp.css
 C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\Pages\Home.razor.rz.scp.css
 C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\ExhibitCard.razor.rz.scp.css
+C:\Users\wryty\Desktop\heritage\Heritage\obj\Debug\net8.0\scopedcss\Components\Pages\ExhibitDetails.razor.rz.scp.css

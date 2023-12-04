@@ -1,0 +1,38 @@
+﻿body {
+}
+
+
+.image-container {
+    text-align: center;
+}
+
+.content-container {
+    margin-top: 3vw;
+    text-align: center;
+}
+
+.image {
+    height: 500px;
+}
+
+.header {
+    margin-bottom: 2.4rem;
+    background: radial-gradient(0% 0% at 50% 50.59%, #000000 0%, #271504 0.01%, #190d01 97.4%);
+    height: 85px;
+}
+
+
+.text {
+    text-align: center;
+    line-height: 85px;
+    color: white;
+    font-family: Cruinn, 'Source Sans Pro';
+    margin-top: -20px;
+}
+
+p1 {
+    text-align: center;
+    line-height: 32px;
+    color: black;
+    font-family: Cruinn, 'Source Sans Pro';
+}

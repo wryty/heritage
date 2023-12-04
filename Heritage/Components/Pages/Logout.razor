@@ -4,12 +4,19 @@
 @inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
-<h3>Logout Confirmation</h3>
-
-<p>Are you sure you want to log out?</p>
-
-<button @onclick="Clear">Logout</button>
-
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Подтверждение выхода</h3>
+                    <p class="card-text">Вы действительно хотите выйти?</p>
+                    <button @onclick="Clear" class="btn btn-danger">Выход</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
 

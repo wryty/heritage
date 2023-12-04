@@ -16,24 +16,24 @@
 </div>
 
 
-<div class="col-md-6 offset-md-3">
-    <h1>Авторизация</h1>
-
-    <SurveyPrompt Title="Нет аккаунта? " />
-    <div>
-        <label for="username">Логин</label>
-        <input id="username" type="text" class="form-control" placeholder="Имя или ник пользователя" @bind="username" />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="mb-4">Вход</h1>
+            <div class="mb-3">
+                <label for="username" class="form-label">Логин</label>
+                <input id="username" type="text" class="form-control" placeholder="Имя или ник пользователя" @bind="username" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input id="password" type="password" class="form-control" placeholder="Введите пароль" @bind="password" />
+            </div>
+            <button class="btn btn-primary" @onclick="AuthAsync">Войти</button>
+            <p class="mt-2">
+                <code>@message</code>
+            </p>
+        </div>
     </div>
-    <div>
-        <label for="password">Пароль</label>
-        <input id="password" type="password" class="form-control" placeholder="Введите пароль" @bind="password" />
-    </div>
-    <p>
-        <button @onclick="AuthAsync">Войти</button>
-        <p>
-            <code>@message</code>
-        </p>
-    </p>
 </div>
 
 @code {
@@ -50,6 +50,7 @@
         {
             SessionService.SetTokenAsync(token);
             message = $"hello: {SessionService.CurrentUser.UserName}, {string.Join(" ", SessionService.CurrentUser.Roles)}";
+            NavigationManager.NavigateTo("/", true);
 
         }
         else

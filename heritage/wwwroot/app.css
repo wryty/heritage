@@ -2,24 +2,26 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #EBD8C7;
 }
 
-a, .btn-link {
-    color: #006bb7;
+a.text:active {
+    text-decoration: none;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+a.text:hover {
+    text-decoration: none;
+}
+
+.text {
+    text-decoration: none;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
-    padding-top: 1.1rem;
 }
 
 h1:focus {
@@ -54,17 +56,72 @@ h1:focus {
 
 
 .exhibit-container {
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: gray;
+    background-color: #C5AB93;
 }
 
-
-.exhibit-card {
-    transition: transform 0.3s ease;
-
+@media (max-width: 1186px) {
+    .exhibit-container {
+        margin-left: calc((100vw - 250px)/2 - 268px);
+        width: 472px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #C5AB93;
+        justify-content: center;
+    }
 }
+
+@media (max-width: 810px) {
+    .exhibit-container {
+        margin-left: calc((100vw - 250px)/2 - 268px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #C5AB93;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 770px) {
+    .exhibit-container {
+        margin-left: 0%;
+        margin-right: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #C5AB93;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .exhibit-container {
+        margin-left: 0%;
+        margin-right: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #C5AB93;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .exhibit-container {
+        width: 472px;
+        aspect-ratio: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #C5AB93;
+        justify-content: center;
+    }
+}
+
 
 .exhibit-card:hover {
     transform: scale(1.1);

@@ -114,22 +114,23 @@ public class ExhibitController : ControllerBase
 
 
     [HttpGet("{id}")]
-    public IActionResult GetExhibitByIdAdmin(long id)
+    public async Task<IActionResult> GetExhibitByIdAdmin(long id)
     {
-        var exhibit = _context.Exhibits.Find(id);
-        return Ok(new { exhibit.Id, exhibit.Name, exhibit.Description, exhibit.ImageFileName });
+        var exhibit = await _context.Exhibits.FindAsync(id);
+        if (exhibit == null) return NotFound("Exhibit not found");
+        return Ok(new { exhibit.Id, exhibit.Name, exhibit.Description, exhibit.PreviewImageFileName, exhibit.DetailImageFileName });
     }
 
     [HttpGet]
     public async Task<IActionResult> GetExhibits()
     {
-        var exhibits = await _context.Exhibits.Select(e => new { e.Id, e.Name, e.Description, e.ImageFileName }).ToListAsync();
+        var exhibits = await _context.Exhibits.Select(e => new { e.Id, e.Name, e.Description, e.PreviewImageFileName, e.DetailImageFileName}).ToListAsync();
         return Ok(exhibits);
     }
 
 
     [HttpPost("/api/Exhibit/UploadImage/{id}")]
-    public async Task<ActionResult> UploadImage(long id, IFormFile file)
+    public async Task<ActionResult> UploadImage(long id, IFormFile file, [FromForm] string imageType)
     {
         var exhibit = await _context.Exhibits.FindAsync(id);
 
@@ -153,12 +154,25 @@ public class ExhibitController : ControllerBase
             await file.CopyToAsync(stream);
         }
 
-        exhibit.ImageFileName = uniqueFileName;
+        if (imageType == "preview")
+        {
+            exhibit.PreviewImageFileName = uniqueFileName;
+        }
+        else if (imageType == "detail")
+        {
+            exhibit.DetailImageFileName = uniqueFileName;
+        }
+        else
+        {
+            return BadRequest("Invalid image type");
+        }
+
         _context.Exhibits.Update(exhibit);
         await _context.SaveChangesAsync();
 
         return Ok("Image uploaded successfully");
     }
+
 
 
 

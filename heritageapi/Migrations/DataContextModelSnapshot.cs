@@ -106,13 +106,16 @@ namespace HeritageApi.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
+                    b.Property<string>("DetailImageFileName")
+                        .HasColumnType("text");
+
                     b.Property<byte[]>("Image")
                         .HasColumnType("bytea");
 
-                    b.Property<string>("ImageFileName")
+                    b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("PreviewImageFileName")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

@@ -1,1 +1,312 @@
-﻿
+﻿body {
+}
+
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.layer2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(43.66% 57.08% at 50% 51.85%, rgba(0, 0, 0, 0.3600000143) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.content-container {
+    display: flex;
+    position: relative;
+    height: 900px;
+}
+
+
+
+.block1 {
+    position: absolute;
+    height: auto;
+    margin-top: 8vw;
+    margin-left: 10%;
+    margin-right: 40%;
+    width: 100%;
+    justify-content: center;
+}
+
+.block2 {
+    position: absolute;
+    height: auto;
+    margin-top: 5.5vw;
+    margin-left: 60%;
+    margin-right: 10%;
+    width: auto;
+}
+
+.block3 {
+    position: absolute;
+    height: auto;
+    margin-top: 5.5vw;
+    margin-left: 50%;
+    margin-right: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+.block4 {
+    position: absolute;
+    height: auto;
+    margin-top: -100px;
+    margin-left: 10%;
+    margin-right: 40%;
+    width: auto;
+}
+
+@media(max-width: 1500px) {
+    .block1 {
+        position: relative;
+        height: auto;
+        margin-top: 8vw;
+        margin-left: 50%;
+        margin-right: 50%;
+        margin-bottom: 50vw;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .block2 {
+        position: relative;
+        height: auto;
+        margin-top: 5.5vw;
+        margin-left: 50%;
+        margin-right: 50%;
+        width: auto;
+    }
+
+    .block3 {
+        position: relative;
+        height: auto;
+        margin-top: 5.5vw;
+        margin-left: 50%;
+        margin-right: 50%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .block4 {
+        position: relative;
+        height: auto;
+        margin-top: -100px;
+        margin-left: 50%;
+        margin-right: 50%;
+        width: auto;
+    }
+}
+
+.rect1 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: 8vw;
+    aspect-ratio: 2.4;
+    width: 15vw;
+    background-color: #f2af72;
+    filter: blur(5.905rem);
+}
+
+.rect2 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 6vw;
+    aspect-ratio: 2.4;
+    width: 15vw;
+    background-color: #f2af72;
+    filter: blur(5.905rem);
+}
+
+.rect3 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 6vw;
+    aspect-ratio: 2.4;
+    width: 17vw;
+    background-color: #f2af72;
+    filter: blur(5.905rem);
+}
+
+.img1 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: 8vw;
+    width: 15vw;
+}
+
+.img2 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 7vw;
+    width: 15vw;
+}
+
+.img3 {
+    position: absolute;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 7vw;
+    width: 17vw;
+}
+
+p {
+    top: 54%;
+    position: absolute;
+    text-align: center;
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+p2 {
+    top: 57%;
+    position: absolute;
+    text-align: center;
+    font-size: 1.2vw;
+    color: #ffffff;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+p3 {
+    width: calc(55% - 250px);
+    position: absolute;
+    text-align: left;
+    font-size: 1.5vw;
+    color: black;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+p4 {
+    width: calc(55% - 250px);
+    position: absolute;
+    text-align: right;
+    font-size: 1.5vw;
+    color: black;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+@media(max-width: 900px) {
+    p {
+        top: 57%;
+        position: absolute;
+        text-align: center;
+        font-size: 1.2vw;
+        color: #ffffff;
+        font-family: Cruinn, 'Source Sans Pro';
+    }
+
+    p2 {
+        top: 60%;
+        position: absolute;
+        text-align: center;
+        font-size: 1.2vw;
+        color: #ffffff;
+        font-family: Cruinn, 'Source Sans Pro';
+    }
+}
+
+@media(max-width: 640px) {
+    p {
+        top: 50%;
+        position: absolute;
+        text-align: center;
+        font-size: 1.2vw;
+        color: #ffffff;
+        font-family: Cruinn, 'Source Sans Pro';
+    }
+
+    p2 {
+        top: 53%;
+        position: absolute;
+        text-align: center;
+        font-size: 1.2vw;
+        color: #ffffff;
+        font-family: Cruinn, 'Source Sans Pro';
+    }
+}
+
+
+
+
+
+.text-container {
+    top: 40%;
+    position: absolute;
+    text-align: center;
+    font-size: 5vw;
+    color: #ffffff;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+h2 {
+    position: relative;
+}
+
+    h2::before, h2::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        border-bottom: 2px solid white;
+    }
+
+    h2::before {
+        right: 80%;
+        width: 40%;
+    }
+
+    h2::after {
+        left: 60%;
+        width: 60%;
+    }
+
+@media(max-width: 880px) {
+    h2::before, h2::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        border-bottom: 1px solid white;
+    }
+}
+
+@media(max-width: 600px) {
+    h2::before, h2::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        border-bottom: 1px solid white;
+    }
+}
+
+
+.title {
+    position: relative;
+    top: 40%;
+    position: absolute;
+    text-align: center;
+    font-size: 5vw;
+    color: #ffffff;
+    font-family: Cruinn, 'Source Sans Pro';
+}
+
+    .title::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        width: 100%;
+        height: 2%;
+        background-color: white;
+    }

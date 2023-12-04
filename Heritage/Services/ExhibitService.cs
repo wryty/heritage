@@ -86,18 +86,18 @@ public class ExhibitService
         return response.IsSuccessStatusCode;
     }
 
-    public async Task<bool> UploadImageAsync(long exhibitId, IFormFile imageFile)
+    public async Task<bool> UploadImageAsync(long exhibitId, IFormFile imageFile, string imageType)
     {
         var client = await GetClientAsync();
 
         var formData = new MultipartFormDataContent();
         formData.Add(new StreamContent(imageFile.OpenReadStream()), "file", imageFile.Name);
+        formData.Add(new StringContent(imageType), "imageType");
 
         var response = await client.PostAsync($"{_apiBaseUrl}/api/Exhibit/UploadImage/{exhibitId}", formData);
 
         return response.IsSuccessStatusCode;
     }
-
     public class ExhibitCreationResponse
     {
         public long ExhibitId { get; set; }

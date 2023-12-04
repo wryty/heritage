@@ -36,6 +36,24 @@ public class AuthenticationServices
         return null;
     }
 
+    public async Task<string?> RegisterAsync(string username, string password)
+    {
+        var response = await httpClient.PostAsJsonAsync("https://localhost:7210/api/Account/SignUp", new { Username = username, Password = password });
+
+        if (response.IsSuccessStatusCode)
+        {
+            var tokenResponse = await response.Content.ReadFromJsonAsync<TokenResponse>();
+
+            if (tokenResponse != null)
+            {
+                await sessionService.SetTokenAsync(tokenResponse.Token);
+                return tokenResponse.Token;
+            }
+        }
+
+        return null;
+    }
+
     private class TokenResponse
     {
         public string Token { get; set; }

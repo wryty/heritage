@@ -2,8 +2,9 @@
 @using Newtonsoft.Json
 @inject IHttpClientFactory ClientFactory
 @inject ExhibitService ExhibitService
-<h1>List of Cultural Heritage</h1>
-
+<div class="header">
+    <h1 class="text"> Список экспонатов</h1>
+</div>
 
 
 <div class="spinner-container" style="display: @(isLoading ? "flex" : "none")">
